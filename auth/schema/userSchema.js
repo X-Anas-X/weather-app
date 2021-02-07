@@ -11,6 +11,7 @@ const users = mongoose.Schema({
   username: { type : String , unique : true, required : true},
   password:{type:String, required:true},
   role:{type:String, enum:['admin','writer'], default:'admin'},
+  favourites : {type : Array, default : []}
 });
 
 users.pre('save',async function(next){
